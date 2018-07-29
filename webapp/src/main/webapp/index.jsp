@@ -1,1 +1,1 @@
-Hello, World!
+Hello, World! on Amazon EC2.
