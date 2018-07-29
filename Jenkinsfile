@@ -9,7 +9,7 @@ pipeline {
     }
 
     /*triggers {
-         pollSCM('* * * * *')*/
+         pollSCM('* * * * *')*/ 
      }
 
 stages{
@@ -29,13 +29,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "pscp -i D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\tomcat-demo.pem D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\webapp\target\*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
+                        bat "pscp -i "D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\tomcat-demo.pem" "D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\webapp\target\*.war" ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "pscp -i D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\tomcat-demo.pem D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\webapp\target\*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
+                        bat "pscp -i "D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\tomcat-demo.pem" "D:\DEVOPS\Jenkins\workspace\PipelineasCodeEg28Jul2018\webapp\target\*.war" ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
                     }
                 }
             }
